@@ -1,27 +1,30 @@
 class CalcsController < ApplicationController
 
   def show
-    @number1 = params[:number1].to_i
-    @number2 = params[:number2].to_i
+    @num1 = params[:num1].to_i
+    @num2 = params[:num2].to_i
     operator = params[:operator]
 
     @result = case operator
 
               when "addition"
-              @number1 + @number2
+              @num1 + @num2
 
               when "subtraction"
-              @number1 - @number2
+              @num1 - @num2
 
               when "multiplication"
-              @number1 * @number2
+              @num1 * @num2
 
               when "division"
-                if @number2 == 0
+                if @num2 == 0
                   "ゼロでは計算できません"
                 else
-                  @number1 / @number2.to_f
+                  @num1 / @num2.to_f
                 end
+              # :operatorが正しくないときの処理を追加
+              else
+                "URLが正しくありません"
               end
               
   end
