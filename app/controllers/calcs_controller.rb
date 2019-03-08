@@ -1,9 +1,10 @@
 class CalcsController < ApplicationController
   include Common
+
   def show
-    @number1 = params[:number1].to_i
-    @number2 = params[:number2].to_i
-    @operator = params[:result]
+    @num1 = params[:num1].to_i
+    @num2 = params[:num2].to_i
+    @operator = params[:operator]
     calculation
   end
 

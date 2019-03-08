@@ -4,18 +4,18 @@ module Common
     @result = case @operator
 
               when "addition"
-              @number1 + @number2
+              @num1 + @num2
 
               when "subtraction"
-              @number1 - @number2
+              @num1 - @num2
 
               when "multiplication"
-              @number1 * @number2
+              @num1 * @num2
 
               when "division"
                 begin
-                  quotient = @number1 / @number2
-                  remainder = @number1 % @number2
+                  quotient = @num1 / @num2
+                  remainder = @num1 % @num2
                   @result = "#{quotient} .. #{remainder}"
 
                   rescue => e
