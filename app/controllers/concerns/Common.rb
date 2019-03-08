@@ -1,5 +1,6 @@
 module Common
   extend ActiveSupport::Concern
+  #計算ロジックのみ以下に移動
   def calculation
     @result = case @operator
 
@@ -22,6 +23,9 @@ module Common
                   
                   @result = e
                 end
+              #:operatorにミスがある場合の処理を追加
+              else
+                "URLが正しくありません"
               end
               
   end
